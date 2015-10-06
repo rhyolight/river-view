@@ -52,7 +52,7 @@ soda:
   limit: 300
   order: creation_date DESC
 
-# How often should River View poll your data sources?
+# How often should River View poll your data sourceUrls?
 interval: 1 day
 
 # When should your collected data expire? This means that River View will store

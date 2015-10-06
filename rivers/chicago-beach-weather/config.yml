@@ -18,7 +18,7 @@ soda:
   dataset: 5rxc-uczg
   limit: 100
 
-# How often should River View poll your data sources?
+# How often should River View poll your data sourceUrls?
 interval: 1 hour
 
 # When should your collected data expire? This means that River View will store

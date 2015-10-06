@@ -26,7 +26,7 @@ describe('when initializing a river', function() {
             config: {
                 name: 'foo',
                 interval: '1 hour',
-                sources: ['mock url']
+                sourceUrls: ['mock url']
             }
         };
         var mockRiverInitPass = {
@@ -40,7 +40,7 @@ describe('when initializing a river', function() {
             config: {
                 name: 'bar',
                 interval: '1 hour',
-                sources: ['mock url']
+                sourceUrls: ['mock url']
             }
         };
         var lm = new Lockmaster({

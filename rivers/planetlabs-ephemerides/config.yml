@@ -17,13 +17,13 @@ timezone: UTC
 
 # A list of URLs that contain the raw data. Each of these will be polled at the
 # interval specified below, and the response text will be sent to your parser.
-sources:
+sourceUrls:
 - http://ephemerides.planet-labs.com/planet_mc.tle
 - http://ephemerides.planet-labs.com/jspoc_matches.txt
 
 historicUrlPattern: http://ephemerides.planet-labs.com/planet_mc_YYYYMMDD.tle
 
-# How often should River View poll your data sources?
+# How often should River View poll your data sourceUrls?
 interval: 1 day
 
 # When should your collected data expire? This means that River View will store

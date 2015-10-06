@@ -40,7 +40,7 @@ module.exports = function(body, options, temporalDataCallback, metaDataCallback)
             props.net,
             props.code,
             props.ids,
-            props.sources,
+            props.sourceUrls,
             props.types,
             props.nst,
             props.dmin,

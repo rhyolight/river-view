@@ -15,10 +15,10 @@ timezone: America/Chicago
 
 # A list of URLs that contain the raw data. Each of these will be polled at the
 # interval specified below, and the response text will be sent to your parser.
-sources:
+sourceUrls:
   - http://mis.ercot.com/misapp/GetReports.do?reportTypeId=12340&reportTitle=System-Wide%20Demand&showHTMLView=&mimicKey
 
-# How often should River View poll your data sources?
+# How often should River View poll your data sourceUrls?
 interval: 1 hour
 
 # When should your collected data expire? This means that River View will store

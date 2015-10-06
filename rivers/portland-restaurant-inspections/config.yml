@@ -15,12 +15,12 @@ timezone: America/Los_Angeles
 
 # A list of URLs that contain the raw data. Each of these will be polled at the
 # interval specified below, and the response text will be sent to your parser.
-sources:
+sourceUrls:
     # Putting the "to" date 100 years in the future, because it is required and
     # I don't want to miss any data.
   - http://api.civicapps.org/restaurant-inspections/?from=2015-01-01&to=2115-01-01
 
-# How often should River View poll your data sources?
+# How often should River View poll your data sourceUrls?
 interval: 1 week
 
 # When should your collected data expire? This means that River View will store
