@@ -170,7 +170,7 @@ describe('when running a river', function() {
     //            config: mockRiverConfig,
     //            parse: parseFn
     //        }],
-    //        redisClient: {
+    //        dataClient: {
     //            logObject: function() {}
     //        }
     //    });
@@ -211,7 +211,7 @@ describe('when running a river', function() {
     //            parse: parseFn,
     //            name: 'mock-river'
     //        }],
-    //        redisClient: {
+    //        dataClient: {
     //            logObject: mockLogObject
     //        }
     //    });
@@ -252,7 +252,7 @@ describe('when running a river', function() {
     //            parse: parseFn,
     //            name: 'mock-river'
     //        }],
-    //        redisClient: {
+    //        dataClient: {
     //            logObject: mockLogObject
     //        }
     //    });
@@ -295,7 +295,7 @@ describe('when running a river', function() {
     //            parse: parseFn,
     //            name: 'mock-river'
     //        }],
-    //        redisClient: {
+    //        dataClient: {
     //            logObject: mockLogObject
     //        }
     //    });

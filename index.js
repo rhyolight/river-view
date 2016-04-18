@@ -13,7 +13,7 @@ var path = require('path'),
     configuration = require('./lib/configuration'),
     RedisClient = require('./lib/redis-client'),
     appConfig = path.join(__dirname, 'config.yml'),
-    CONFIG, REDIS_URL, redisClient, lockmaster, rivers = [],
+    CONFIG, REDIS_URL, dataClient, lockmaster, rivers = [],
     webapp = express();
 
 // read application configuration
@@ -40,17 +40,17 @@ if (!process.env[CONFIG.redisEnv]) {
 }
 
 // Connect to redis
-redisClient = new RedisClient(
+dataClient = new RedisClient(
     REDIS_URL,
     CONFIG.maxDataPointsPerRequest,
     CONFIG.defaults.json.snapto
 );
-redisClient.initialize(function(err) {
+dataClient.initialize(function(err) {
     if (err) throw err;
 
     // Look for data-sources.
     rivers = RiverFactory.createRivers(
-        CONFIG.riverDir, CONFIG.defaults.river, redisClient
+        CONFIG.riverDir, CONFIG.defaults.river, dataClient
     );
 
     console.log('Starting with %s rivers:', rivers.length);
@@ -58,7 +58,7 @@ redisClient.initialize(function(err) {
     lockmaster = new Lockmaster({
         config: CONFIG,
         rivers: rivers,
-        redisClient: redisClient
+        redisClient: dataClient
     });
 
     lockmaster.start()
@@ -69,7 +69,7 @@ redisClient.initialize(function(err) {
         webapp.use('/static', express.static('build'));
         startDataService({
             app: webapp,
-            redisClient: redisClient,
+            dataClient: dataClient,
             rivers: rivers,
             config: CONFIG
 

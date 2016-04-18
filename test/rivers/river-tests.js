@@ -272,7 +272,7 @@ describe('river config', function() {
 //            parse: parse,
 //            name: 'foo',
 //            config: {}
-//        }], redisClient: mockRedisClient});
+//        }], dataClient: mockRedisClient});
 //
 //        it('calls the temporalDataCallback with data matching config', function(done) {
 //            lockmaster.initializeRivers(function(err, sourceUrls) {
